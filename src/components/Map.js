@@ -35,18 +35,9 @@ export default function Map() {
         }
     }
 
+    const updateWebcams = () => {
 
-    useEffect(() => {
-        if(mapRef) {
-            const mapGl = mapRef.current.getMap();
-            const bounds = mapGl.getBounds();
-            updateBounds(bounds);
-        }
-    }, []);
-
-    useEffect(() => {
-        if(mapbounds) {
-            const bboxURL = `https://webcamstravel.p.rapidapi.com/webcams/list/bbox=${mapbounds.neLat},${mapbounds.neLng},${mapbounds.swLat},${mapbounds.swLng}`;
+        const bboxURL = `https://webcamstravel.p.rapidapi.com/webcams/list/bbox=${mapbounds.neLat},${mapbounds.neLng},${mapbounds.swLat},${mapbounds.swLng}`;
             axios.get(bboxURL, {
                 headers: {
                     'x-rapidapi-host': 'webcamstravel.p.rapidapi.com',
@@ -56,6 +47,7 @@ export default function Map() {
                 const allwebcams = res.data.result.webcams;
                 console.log(allwebcams);
                 if(allwebcams) {
+                    setWebcams([]);
                     allwebcams.map(webcam => {
                         axios.get(`https://webcamstravel.p.rapidapi.com/webcams/list/webcam=${webcam.id}?lang=en&show=webcams:image,location`, {
                             headers: {
@@ -79,6 +71,20 @@ export default function Map() {
                 }
                 
             })
+    }
+
+
+    useEffect(() => {
+        if(mapRef) {
+            const mapGl = mapRef.current.getMap();
+            const bounds = mapGl.getBounds();
+            updateBounds(bounds);
+        }
+    }, [viewport]);
+
+    useEffect(() => {
+        if(mapbounds) {
+            updateWebcams();
         }
     }, [mapbounds]);
 
