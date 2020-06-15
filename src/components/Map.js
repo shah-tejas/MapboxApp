@@ -88,38 +88,43 @@ export default function Map() {
 
 
     return (
-        <div>
+        <div className="maparea">
             <h2>View live cameras around the world!</h2>
-            <p>(Click the camera icon on the map, and scroll down)</p>
-            <ReactMapGL
-                {...viewport}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-                onViewportChange={viewport => {
-                    setViewport(viewport);
-                    setWebcams([]);
-                }}
-                ref={mapRef}
-            >
-                {webcams.map(webcam => (
-                    <Marker 
-                        key={webcam.webcamid}
-                        latitude={webcam.lat}
-                        longitude={webcam.long}
+            <p>(Click the camera icon on the map)</p>
+            <div className="mapcontent">
+                <div>
+                    <ReactMapGL
+                        {...viewport}
+                        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                        onViewportChange={viewport => {
+                            setViewport(viewport);
+                            setWebcams([]);
+                        }}
+                        ref={mapRef}
                     >
-                        <button
-                            className="marker-btn"
-                            onClick={e => {
-                                e.preventDefault();
-                                setImgprev(webcam.img)
-                            }}
-                        >
-                            <img src={cam} alt="Skate Park Icon" width={10} height={10} />
-                        </button>    
-                    </Marker>
-                ))}
-            </ReactMapGL>
-            <br/>
-            {imgprev && <Webcam prev={imgprev} />}
+                        {webcams.map(webcam => (
+                            <Marker 
+                                key={webcam.webcamid}
+                                latitude={webcam.lat}
+                                longitude={webcam.long}
+                            >
+                                <button
+                                    className="marker-btn"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setImgprev(webcam.img)
+                                    }}
+                                >
+                                    <img src={cam} alt="Skate Park Icon" width={10} height={10} />
+                                </button>    
+                            </Marker>
+                        ))}
+                    </ReactMapGL>
+                </div>
+                <div>
+                    {imgprev && <Webcam prev={imgprev} />}
+                </div>
+            </div>
             
         </div>
     )
