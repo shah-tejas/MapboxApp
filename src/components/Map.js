@@ -89,8 +89,8 @@ export default function Map() {
 
     return (
         <div>
-            <h2>View live webcam preview!</h2>
-            <p>(Click the camera icon on the map)</p>
+            <h2>View live cameras around the world!</h2>
+            <p>(Click the camera icon on the map, and scroll down)</p>
             <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
