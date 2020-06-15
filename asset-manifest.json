@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MapboxApp/static/css/main.5f361e03.chunk.css",
-    "main.js": "/MapboxApp/static/js/main.902eb29c.chunk.js",
-    "main.js.map": "/MapboxApp/static/js/main.902eb29c.chunk.js.map",
+    "main.css": "/MapboxApp/static/css/main.c672c085.chunk.css",
+    "main.js": "/MapboxApp/static/js/main.6c5e8356.chunk.js",
+    "main.js.map": "/MapboxApp/static/js/main.6c5e8356.chunk.js.map",
     "runtime-main.js": "/MapboxApp/static/js/runtime-main.89628f09.js",
     "runtime-main.js.map": "/MapboxApp/static/js/runtime-main.89628f09.js.map",
     "static/js/2.aea0dcef.chunk.js": "/MapboxApp/static/js/2.aea0dcef.chunk.js",
     "static/js/2.aea0dcef.chunk.js.map": "/MapboxApp/static/js/2.aea0dcef.chunk.js.map",
     "index.html": "/MapboxApp/index.html",
-    "precache-manifest.3df60e12957fc0d56c6881107b3f977d.js": "/MapboxApp/precache-manifest.3df60e12957fc0d56c6881107b3f977d.js",
+    "precache-manifest.d28abeae107602478c9eec54b6753459.js": "/MapboxApp/precache-manifest.d28abeae107602478c9eec54b6753459.js",
     "service-worker.js": "/MapboxApp/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/MapboxApp/static/css/main.5f361e03.chunk.css.map",
+    "static/css/main.c672c085.chunk.css.map": "/MapboxApp/static/css/main.c672c085.chunk.css.map",
     "static/js/2.aea0dcef.chunk.js.LICENSE.txt": "/MapboxApp/static/js/2.aea0dcef.chunk.js.LICENSE.txt",
     "static/media/loading.png": "/MapboxApp/static/media/loading.9ae26f65.png",
     "static/media/logo.svg": "/MapboxApp/static/media/logo.5d5d9eef.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.89628f09.js",
     "static/js/2.aea0dcef.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.902eb29c.chunk.js"
+    "static/css/main.c672c085.chunk.css",
+    "static/js/main.6c5e8356.chunk.js"
   ]
 }
