@@ -11,7 +11,7 @@ export default function Map() {
         longitude: -100.4458825,
         width: "60vw",
         height: "75vh",
-        zoom: 3.2
+        zoom: 5
     })
     const [mapbounds, setMapbound] = useState({
         neLng: 0,
@@ -45,7 +45,6 @@ export default function Map() {
                 }
             }).then(res => {
                 const allwebcams = res.data.result.webcams;
-                console.log(allwebcams);
                 if(allwebcams) {
                     setWebcams([]);
                     allwebcams.map(webcam => {
@@ -58,8 +57,6 @@ export default function Map() {
                             const imgsrc = res.data.result.webcams[0].image.current.preview;
                             const lt = res.data.result.webcams[0].location.latitude;
                             const lng = res.data.result.webcams[0].location.longitude;
-                            console.log(lt);
-                            console.log(lng);
                             setWebcams(webcams => webcams.concat({
                                 webcamid: webcam.id,
                                 long: lng,
@@ -99,6 +96,7 @@ export default function Map() {
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                 onViewportChange={viewport => {
                     setViewport(viewport);
+                    setWebcams([]);
                 }}
                 ref={mapRef}
             >
